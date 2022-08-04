@@ -1,20 +1,58 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar color="primary">
     <ion-title>
-      Blank
+      WhatsApp
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name='search'></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon slot="icon-only" name='ellipsis-vertical'></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
-</ion-header>
+</ion-header> 
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-segment [(ngModel)]='screen'>
+    <ion-segment-button value="chat">
+      SOHBETLER
+    </ion-segment-button>
+    <ion-segment-button value="status">
+      DURUM
+    </ion-segment-button>
+    <ion-segment-button value="calls">
+      ARAMALAR
+    </ion-segment-button>
+  </ion-segment>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-list>
+    <ion-item  *ngFor='let i of[1]' >
+      <ion-buttons>
+       <ion-fab-button (click)="avatar()">
+         <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+       </ion-fab-button>
+      </ion-buttons>
+      <ion-label class="ion-text-wrap">
+        <ion-button fill="clear" (click)="homepage()" >
+          <ion-label color="dark" size="small">Merve Kanat</ion-label>
+        </ion-button>
+      </ion-label>
+      
+      <ion-label class="ion-text-wrap" slot="end" ion-text="end">
+        <p class="time">08:58</p>
+      </ion-label>
+  </ion-item>
+
+    
+  </ion-list>
+
+<ion-content>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="primary">
+        <ion-icon name="chatbox"></ion-icon>
+    </ion-fab-button>
+</ion-fab>
+
 </ion-content>

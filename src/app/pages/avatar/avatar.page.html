@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>WhatsApp
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="home()">
+       <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+      <ion-button slot="end">
+       <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+      </ion-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content >
+  <ion-card  >
+    <div class="img-wrapper">
+      <img src="https://www.rentgo.com/wp-content/uploads/2021/04/Treeking.jpg" />
+      <ion-button (click)="presentActionSheet()" color="primary">
+        <ion-icon name="camera" class="camera-icon">
+        </ion-icon>
+      </ion-button>
+    </div>
+    <ion-card-content class="ion-text-center">
+      <ion-text  *ngFor="let item of gelenData" color="medium" font="">
+          {{item.alici}}
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

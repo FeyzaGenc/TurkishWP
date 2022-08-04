@@ -1,0 +1,23 @@
+.item{
+    padding:10px;
+    border-radius:10px;
+    margin-bottom: 4px;
+    white-space:pre-wrap;
+}
+
+.other-message{
+    background:var(--ion-color-secondary);
+    color: #000;
+
+}
+
+.my-message{
+    background: var(--ion-color-tertiary);
+    color: #000;
+}
+
+.time{
+    color:#000;
+    float:right;
+    font-size:small;
+}

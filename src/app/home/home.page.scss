@@ -1,27 +1,23 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+ion-segment{
+  background:var(--ion-color-primary);
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+ion-segment-button{
+  --color:rgba(255, 255, 255, 0.51);
+  --color-checked:white;
+  --indicator-height:4px;
+  --indicator-color:rgb(246, 239, 239);
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+.name{
+  font-size: 18px;
+  font-weight: bold;
+  color:black;
 }
-
-#container a {
-  text-decoration: none;
+.msg{
+  font-size: 15px;
+  font-weight: bold;
+}
+.time{
+  font-weight: bold;
 }
