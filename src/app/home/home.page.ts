@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
+import { Sim } from '@ionic-native/sim/ngx';
 
 @Component({
   selector: 'app-home',
@@ -12,11 +14,37 @@ export class HomePage implements OnInit {
   }
   
   public screen:any='chat';
-  constructor(private router:Router) {}
+  userId: string = '';
+  userList: any = [];
+ 
+  constructor(private router:Router,private toastCtrl:ToastController,private sim:Sim) {}
   
   ngOnInit() {
-    
+    if(this.getPhoneNumber()!==null){
+      this.showToast();
+      
+    } 
+    //this.getPhoneNumber();
+
   }
+
+  
+  async showToast(){
+    await this.toastCtrl.create({
+      message:"Telefon numarası doğrulandı",
+      duration:2000,
+    }).then(res=>res.present());
+  }
+
+  getPhoneNumber()
+{
+  
+    this.sim.getSimInfo().then(
+    (info) => console.log('Sim info: ', info),
+    (err) => console.log('Unable to get sim info: ', err)
+  );
+  
+}
 
   homepage(){
     this.router.navigate(['messages']);
@@ -26,7 +54,9 @@ export class HomePage implements OnInit {
     avatar(){
       this.router.navigate(['avatar']);
     
-      }
+    }
+
+    
   
 
 }

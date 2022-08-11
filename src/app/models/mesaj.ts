@@ -1,5 +1,3 @@
-
-
 export interface IMesaj{
 
         alici?: string, 
